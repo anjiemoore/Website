@@ -12,4 +12,12 @@ $('.navbar a').on('click', function(e) {
           800
           );
       }
-  })
+  });
+
+$('.menu-icon').click(function () {
+    $('.navlinks').addClass('active');
+});
+
+$('.navlinks a').click(function() {
+    $('.navlinks').removeClass('active');
+});
