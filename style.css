@@ -1,26 +1,32 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: #333;
     color: #fff;
     line-height: 1.6;
-    height: 100vh;
+    height: 100%;
+    background-color: #b4b4b4;
 }
 
+a {
+    text-decoration: none;
+}
 .container {
     width: 100%;
     height: 100%;
+    position:relative;
 }
 
+/* Navigation bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: transparent;
     color: #f4f4f4;
     position: fixed;
     top: 0;
@@ -51,7 +57,8 @@ body {
 }
 
 .navlinks a:hover {
-    color: rosybrown;
+    color: #333;
+    text-decoration: underline;
 }
 
 /* Responsive menu*/
@@ -66,7 +73,7 @@ body {
     height: 21px;
 }
 
-
+/* Styling of different sections */
 section {
     display: flex;
     flex-direction: column;
@@ -81,28 +88,64 @@ section h1 {
     font-size: 4rem;
 }
 
+section h2 {
+    font-size: 2rem;
+}
+
 section p {
     font-size: 1.5rem;
 }
 
-#home {
-    background: #333;
+/* Bio section styling */
+.about-container {
+    display: grid;
+    width: 100%;
+    grid-template-areas: 'bioimg bio';
+}
+.bioimg {
+    grid-area: bioimg;
+}
+.bio-image {
+    margin: auto;
+    border-radius: 50%;
+    border: #b4b4b4 3px solid;
+    width: 300px;
+    height: 300px;
 }
 
-#about {
-    background-color: rosybrown;
+.bio {
+    grid-area: bio;
+    text-align: center;
 }
+
+.work-icons {
+    align-items: center;
+}
+
+/* Project card styling */
+
+
+/* Footer styling */
 
 #footer {
-    position: fixed;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;   
+    background-color: transparent;
     text-align: center;
-    width: 100%;
-    height: 40px;
-    color: #f4f4f4;
-    left: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    font-family: 'Roboto', sans-serif;
+}
+
+/* Icon styling */
+.icons {
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.fa-linkedin:hover, .fa-twitter-square:hover, .fa-envelope-open-text:hover, .fa-phone-square-alt:hover, .fa-download:hover, .fa-github-square:hover {
+    color: #fff;
+    text-shadow:3px 6px rgba(65, 65, 64, 0.6)
 }
 
 /* Media queries*/
@@ -119,7 +162,9 @@ section p {
 
     .navbar {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-start;    
+        background-color: #b4b4b4;
+
     }
 
     .navlinks ul {
@@ -138,4 +183,21 @@ section p {
     .navlinks.active {
         display: flex;
     }
+
+    /*Changing bio image and bio to be on one line*/
+
+    .bio, .bioimg, .bio {
+        width: 100%;
+    }
+
+    .bioimg {
+        padding-bottom: 50px;
+
+    }
+
+    .bio-image {
+        width: 200px;
+        height: 200px;
+    }
+
 }
