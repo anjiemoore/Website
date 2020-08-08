@@ -100,6 +100,7 @@ section p {
 .about-container {
     display: grid;
     width: 100%;
+    min-height: 100vh;
     grid-template-areas: 'bioimg bio';
 }
 .bioimg {
@@ -116,6 +117,8 @@ section p {
 .bio {
     grid-area: bio;
     text-align: center;
+    padding-top: 25px;
+    padding-left: 25px;
 }
 
 .work-icons {
@@ -185,14 +188,14 @@ section p {
     }
 
     /*Changing bio image and bio to be on one line*/
-
-    .bio, .bioimg, .bio {
+    .about-container {
         width: 100%;
+        padding: 50px;
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .bioimg {
         padding-bottom: 50px;
-
     }
 
     .bio-image {
